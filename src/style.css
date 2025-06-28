@@ -1,0 +1,66 @@
+/* Other CSS imports */
+/* @import url("/src/css/"); */
+
+/* General styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: poppins, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Color variables */
+:root {
+  --main-color: #ccb76d;
+  --secondary-color: #5f85db;
+  --text-color: #f6f4f0;
+  --bg-color: #222222;
+  --body-bg-color: #2d2d33;
+  --border-color: #303030;
+  --gradient-start: rgb(26, 26, 26);
+  --gradient-end: #0c0c0c;
+  --bg-gradient-start: #2d2f31;
+  --bg-gradient-end: #272a2e;
+}
+
+/* Light mode colors */
+:root.light-mode {
+  --main-color: #ccb76d;
+  --secondary-color: #5f85db;
+  --text-color: #222222;
+  --bg-color: #ebebeb;
+  --body-bg-color: #dadada;
+  --border-color: #e0e0e0;
+  --gradient-start: rgb(255, 255, 255);
+  --gradient-end: #ececec;
+  --bg-gradient-start: rgba(235, 235, 235);
+  --bg-gradient-end: #dbdbdb;
+}
+
+body {
+  color: var(--text-color);
+  background-image: linear-gradient(
+    120deg,
+    var(--bg-gradient-start),
+    var(--bg-gradient-end)
+  ) !important;
+  background-attachment: fixed;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ) !important;
+}
