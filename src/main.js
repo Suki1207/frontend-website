@@ -1,0 +1,2 @@
+// AOS install
+AOS.init();
