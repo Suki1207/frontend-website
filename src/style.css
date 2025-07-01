@@ -1,5 +1,6 @@
 /* Other CSS imports */
 @import url("/src/css/sidebar.css");
+@import url("/src/css/profile.css");
 
 /* General styles */
 * {
