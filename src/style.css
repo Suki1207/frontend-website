@@ -2,6 +2,7 @@
 @import url("/src/css/sidebar.css");
 @import url("/src/css/profile.css");
 @import url("/src/css/about.css");
+@import url("/src/css/skills.css");
 
 /* General styles */
 * {
