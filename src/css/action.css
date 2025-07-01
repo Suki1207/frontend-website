@@ -1,0 +1,10 @@
+.call-to-action {
+  color: var(--text-color);
+  text-align: center;
+  margin: 35px 0px 20px 0px;
+}
+
+.call-to-action a {
+  color: var(--main-color);
+  text-decoration: underline;
+}
