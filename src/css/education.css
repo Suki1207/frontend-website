@@ -1,0 +1,77 @@
+.edu-work-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  margin-top: 50px;
+}
+.edu-work-label {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  margin-left: 20px;
+}
+.edu-work-box-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-gap: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  position: relative;
+}
+.edu-work-box {
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  background-color: var(--bg-color);
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+.edu-work-box-container::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: calc(100% - 50px);
+  background-color: var(--border-color);
+}
+.edu-work-box::after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 25px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  opacity: 0.6;
+}
+.edu-work-box .edu-work-year {
+  color: var(--main-color);
+  font-size: 0.9rem;
+}
+.edu-work-box strong {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.edu-work-location {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+.edu-work-box p {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
