@@ -92,3 +92,115 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1170px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-profile {
+    position: static;
+  }
+  .user-profile-img {
+    min-height: 500px;
+  }
+  .menu-profile {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-gap: 10px;
+    align-items: baseline;
+    max-width: 600px;
+    margin: auto;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 5px;
+    box-shadow: 2px 2px 30px rgba(235, 235, 235, 0.12);
+  }
+  nav ul li a::after,
+  nav ul li a::before {
+    display: none;
+  }
+  .light-dark-toggle {
+    width: 60px;
+    height: 60px;
+    box-shadow: 2px 2px 30px var(--border-color);
+  }
+}
+@media (max-width: 790px) {
+  .project-container-about {
+    grid-template-columns: 1fr 1fr;
+  }
+  .skill-box-container,
+  .service-container,
+  .plan-container,
+  .project-container,
+  .edu-work-container,
+  .contact-box-container {
+    grid-template-columns: 1fr;
+  }
+  .contact-box-location {
+    grid-column: 1/2;
+  }
+}
+@media (max-width: 520px) {
+  .main-container {
+    margin: 20px auto;
+  }
+  .project-container-about {
+    grid-template-columns: 1fr;
+  }
+  .user-profile-img {
+    min-height: auto;
+  }
+  .user-profile-container {
+    padding: 30px;
+  }
+  .section-container,
+  #about-us {
+    padding: 30px 20px;
+  }
+  #about-us h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #about-us h3 span {
+    min-height: 34px;
+  }
+  #about-us h1,
+  #about-us h1 span {
+    font-size: 2rem;
+  }
+  .project-container-about {
+    grid-gap: 15px;
+  }
+  .project-container-box {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+  .project-container-box span {
+    font-size: 2.8rem;
+  }
+  .section-heading h3 {
+    font-size: 1.6rem;
+  }
+  .project-box-img {
+    height: 250px;
+  }
+  .client-logos,
+  .contact-box {
+    flex-wrap: wrap;
+    grid-gap: 15px;
+  }
+  .client-logos img {
+    width: auto;
+    height: 35px;
+  }
+}
