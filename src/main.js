@@ -17,3 +17,27 @@ function setTheme() {
   });
 }
 setTheme();
+
+// Typing Effect
+function setTypingEffect() {
+  const roleElement = document.getElementById("role");
+  const roles = ["Frontend Developer"];
+  let letterIndex = 0;
+
+  function typeRole() {
+    roleElement.textContent = roles[0].slice(0, letterIndex);
+    letterIndex++;
+
+    if (letterIndex > roles[0].length) {
+      setTimeout(() => {
+        letterIndex = 0;
+      }, 850);
+    }
+  }
+
+  setInterval(() => {
+    typeRole();
+  }, 100);
+}
+
+document.addEventListener("DOMContentLoaded", setTypingEffect);
