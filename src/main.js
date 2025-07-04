@@ -6,7 +6,7 @@ function setTheme() {
   const toggleBtnElement = document.querySelector(".light-dark-toggle");
   const htmlElement = document.documentElement;
 
-  document.addEventListener("click", () => {
+  toggleBtnElement.addEventListener("click", () => {
     if (htmlElement.classList.contains("light-mode")) {
       htmlElement.classList.remove("light-mode");
       toggleBtnElement.innerHTML = `<i class='fa-solid fa-sun' ></i>`;
