@@ -75,38 +75,18 @@ renderProjects(projects);
 // Project Filter
 function filterProjects() {
   const filterBtnsElement = document.querySelectorAll(".project-list li");
-  const projectCardsElement = document.querySelectorAll(".project-box");
-
   filterBtnsElement.forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterBtnsElement.forEach((button) => {
-        button.classList.remove("active");
-      });
+      filterBtnsElement.forEach((button) => button.classList.remove("active"));
       btn.classList.add("active");
-
       const filterValue = btn.getAttribute("data-filter").trim().toLowerCase();
-
-      projectCardsElement.forEach((card) => {
-        const cardCategory = card
-          .getAttribute("data-category")
-          .trim()
-          .toLowerCase();
-
-        // Debugging
-        console.log(`Filter: "${filterValue}", Card: "${cardCategory}"`);
-
-        if (filterValue === "all" || cardCategory === filterValue) {
-          card.style.display = "flex";
-          card.setAttribute("data-aos", "fade-up");
-        } else {
-          card.style.display = "none";
-          card.removeAttribute("data-aos");
-        }
-      });
-
-      if (window.AOS) {
-        AOS.refresh();
-      }
+      const filtered =
+        filterValue === "all"
+          ? projects
+          : projects.filter(
+              (p) => p.category.trim().toLowerCase() === filterValue
+            );
+      renderProjects(filtered);
     });
   });
 }
