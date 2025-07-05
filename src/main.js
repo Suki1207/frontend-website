@@ -1,3 +1,5 @@
+import { projects } from "./js/projects.js";
+
 // AOS install
 AOS.init();
 
@@ -42,6 +44,33 @@ function setTypingEffect() {
   });
 }
 setTypingEffect();
+
+// Render Projects Dynamically
+function renderProjects(projects) {
+  const containerElement = document.getElementById("data-container");
+  let html = "";
+  projects.forEach((project) => {
+    html += `<a href="${project.url}" target="_blank"     class="project-box" data-category="${project.category}" data-aos="fade-up">
+        <div class="project-box-img">
+          <img src="${project.img}" alt="project" />
+        </div>
+        <div class="project-box-text-container">
+          <div class="project-box-text">
+            <strong>${project.name}</strong>
+            <span>${project.category}</span>
+          </div>
+          <div class="project-box-btn">
+            ${project.icon}
+          </div>
+        </div>
+      </a>`;
+  });
+
+  containerElement.innerHTML = html;
+
+  if (window.AOS) AOS.refresh();
+}
+renderProjects(projects);
 
 // Project Filter
 function filterProjects() {
