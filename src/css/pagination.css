@@ -1,0 +1,15 @@
+.paginationjs {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.8rem;
+  list-style: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.paginationjs li {
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+  user-select: none;
+}
