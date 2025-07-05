@@ -72,6 +72,25 @@ function renderProjects(projects) {
 }
 renderProjects(projects);
 
+// Pagination
+function paginateProjects(projects) {
+  $("#pagination-container").pagination({
+    dataSource: projects,
+    pageSize: 10,
+    showPageNumbers: false,
+    showNavigator: false,
+    showPrevious: true,
+    showNext: true,
+    callback: function (data, pagination) {
+      renderProjects(data);
+    },
+    afterPaging: function () {
+      $("html, body").animate({ scrollTop: $("#projects").offset().top }, 300);
+    },
+  });
+}
+paginateProjects(projects);
+
 // Project Filter
 function filterProjects() {
   const filterBtnsElement = document.querySelectorAll(".project-list li");
@@ -86,7 +105,8 @@ function filterProjects() {
           : projects.filter(
               (p) => p.category.trim().toLowerCase() === filterValue
             );
-      renderProjects(filtered);
+      //renderProjects(filtered);
+      paginateProjects(filtered);
     });
   });
 }
