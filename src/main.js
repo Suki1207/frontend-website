@@ -74,6 +74,7 @@ renderProjects(projects);
 
 // Pagination
 function paginateProjects(projects) {
+  let isFirstRender = true;
   $("#pagination-container").pagination({
     dataSource: projects,
     pageSize: 10,
@@ -85,8 +86,12 @@ function paginateProjects(projects) {
       renderProjects(data);
     },
     afterPaging: function () {
+      if (isFirstRender) {
+        isFirstRender = false;
+        return;
+      }
       $("html, body").animate({ scrollTop: $("#projects").offset().top }, 300);
-    },
+    }
   });
 }
 paginateProjects(projects);
